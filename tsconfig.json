@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "ESNext",
+    "strict": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "dist/",
+    "rootDir": "assets",
+    "sourceMap": true,
+    "moduleResolution": "Node"
+  },
+  "include": [
+    "assets/**/*.ts",
+    "assets/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

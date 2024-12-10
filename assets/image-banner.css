@@ -1,0 +1,121 @@
+/* Ensure the background image covers the entire div */
+.image-banner {
+    height: 100vh; /* Full viewport height */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.block-heading1 {
+    display: none;
+}
+/* Inner content container */
+.content-container {
+    padding: 20px;
+    max-width: 1200px;
+    width: 90%;
+    z-index: 10;
+}
+
+/* Style the title */
+.banner-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Style subtitle */
+.banner-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+/* Style buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-primary {
+    background-color: #007bff;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+}
+
+/* Hover effects for interactivity */
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-secondary:hover {
+    background-color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .image-banner {
+        height: 90vh;
+    }
+
+    .banner-title {
+        font-size: 2.5rem;
+    }
+
+    .banner-subtitle {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .image-banner {
+        height: 80vh; /* Adjust for tablets/smaller viewports */
+    }
+
+    .banner-title {
+        font-size: 2.2rem;
+    }
+
+    .banner-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .btn {
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-banner {
+        height: 60vh; /* Better fit for mobile phones */
+    }
+
+    .banner-title {
+        font-size: 1.8rem;
+    }
+
+    .banner-subtitle {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 6px 12px;
+    }
+}
