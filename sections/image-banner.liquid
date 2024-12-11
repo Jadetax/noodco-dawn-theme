@@ -1,13 +1,19 @@
-<div class="image-banner" style="background-image: url({{ section.settings.banner_background_image | img_url }});">
+<div class="image-banner" style="
+  background-image: url({{ section.settings.banner_background_image | img_url }});
+  padding-top: {{ section.settings.padding_top | default: '0px' }};
+  padding-right: {{ section.settings.padding_right | default: '0px' }};
+  padding-bottom: {{ section.settings.padding_bottom | default: '0px' }};
+  padding-left: {{ section.settings.padding_left | default: '0px' }};
+">
   <div class="content-container">
     <!-- Main Banner Title -->
     {% if section.settings.banner_title %}
-    <h1 class="banner-title">{{ section.settings.banner_title }}</h1>
+    <h1 class="banner-title" style="color: {{ section.settings.banner_title_color | default: '#000' }}">{{ section.settings.banner_title }}</h1>
     {% endif %}
 
     <!-- Subtitle Section -->
     {% if section.settings.banner_subtitle %}
-    <p class="banner-subtitle">{{ section.settings.banner_subtitle }}</p>
+    <p class="banner-subtitle" style="color: {{ section.settings.banner_subtitle_color | default: '#000' }}">{{ section.settings.banner_subtitle }}</p>
     {% endif %}
 
     <!-- Loop through allowed dynamic content blocks -->
@@ -19,12 +25,12 @@
     {% endif %}
     {% when 'buttons' %}
     {% if block.settings.button_label_1 and block.settings.button_link_1 %}
-    <a href="{{ block.settings.button_link_1 }}" class="btn btn-primary {% if block.settings.button_style_secondary_1 %}btn-secondary{% endif %}">
+    <a href="{{ block.settings.button_link_1 }}" class="btn {{ block.settings.button_style_1_class }}" style="color: {{ block.settings.button_text_color | default: '#fff' }}; background-color: {{ block.settings.button_bg_color | default: '#000' }};">
       {{ block.settings.button_label_1 }}
     </a>
     {% endif %}
     {% if block.settings.button_label_2 and block.settings.button_link_2 %}
-    <a href="{{ block.settings.button_link_2 }}" class="btn btn-secondary">
+    <a href="{{ block.settings.button_link_2 }}" class="btn {{ block.settings.button_style_2_class }}" style="color: {{ block.settings.button_text_color | default: '#fff' }}; background-color: {{ block.settings.button_bg_color | default: '#000' }};">
       {{ block.settings.button_label_2 }}
     </a>
     {% endif %}
@@ -49,10 +55,46 @@
 "default": "Elegant Basin: Perfect for Modern Bathrooms"
 },
 {
+"type": "color",
+"id": "banner_title_color",
+"label": "Banner Title Font Color",
+"default": "#000"
+},
+{
 "type": "textarea",
 "id": "banner_subtitle",
 "label": "Banner Subtitle",
 "default": "Upgrade your bathroom today."
+},
+{
+"type": "color",
+"id": "banner_subtitle_color",
+"label": "Banner Subtitle Font Color",
+"default": "#000"
+},
+{
+"type": "text",
+"id": "padding_top",
+"label": "Padding Top",
+"default": "0px"
+},
+{
+"type": "text",
+"id": "padding_right",
+"label": "Padding Right",
+"default": "0px"
+},
+{
+"type": "text",
+"id": "padding_bottom",
+"label": "Padding Bottom",
+"default": "0px"
+},
+{
+"type": "text",
+"id": "padding_left",
+"label": "Padding Left",
+"default": "0px"
 }
 ],
 "blocks": [
@@ -65,18 +107,6 @@
 "id": "heading",
 "label": "Heading",
 "default": "Default Heading"
-}
-]
-},
-{
-"type": "text",
-"name": "Text",
-"settings": [
-{
-"type": "textarea",
-"id": "text",
-"label": "Text Content",
-"default": "Provide some placeholder text here."
 }
 ]
 },
@@ -96,10 +126,67 @@
 "label": "Button Link 1"
 },
 {
-"type": "checkbox",
-"id": "button_style_secondary_1",
-"label": "Secondary Style for Button 1",
-"default": false
+"type": "color",
+"id": "button_text_color",
+"label": "Button Text Color",
+"default": "#fff"
+},
+{
+"type": "color",
+"id": "button_bg_color",
+"label": "Button Background Color",
+"default": "#000"
+},
+{
+"type": "select",
+"id": "button_style_1_class",
+"label": "Button Style",
+"options": [
+{
+"value": "btn-primary",
+"label": "Primary"
+},
+{
+"value": "btn-secondary",
+"label": "Secondary"
+},
+{
+"value": "btn-border",
+"label": "Border"
+}
+],
+"default": "btn-primary"
+},
+{
+"type": "text",
+"id": "button_label_2",
+"label": "Button Label 2",
+"default": "Learn More"
+},
+{
+"type": "url",
+"id": "button_link_2",
+"label": "Button Link 2"
+},
+{
+"type": "select",
+"id": "button_style_2_class",
+"label": "Button Style",
+"options": [
+{
+"value": "btn-primary",
+"label": "Primary"
+},
+{
+"value": "btn-secondary",
+"label": "Secondary"
+},
+{
+"value": "btn-border",
+"label": "Border"
+}
+],
+"default": "btn-secondary"
 }
 ]
 }
@@ -111,9 +198,6 @@
 "blocks": [
 {
 "type": "heading"
-},
-{
-"type": "text"
 },
 {
 "type": "buttons"
