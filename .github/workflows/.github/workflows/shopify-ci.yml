@@ -1,0 +1,31 @@
+name: Shopify CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        
+      - name: Set up Shopify CLI
+        run: |
+          curl -s https://shopify.dev/tools/theme-checker/install.sh | bash
+          npm install -g @shopify/theme-checker
+          npm install -g shopify-cli
+
+      - name: Linting and Testing
+        run: |
+          npx theme-checker lint .
+          npx shopify theme dev --store YOUR_STORE_NAME --password YOUR_PASSWORD --dir path/to/your/theme --nodelete --yes
+
+      - name: Build the Theme
+        run: |
+          npx shopify theme build --store YOUR_STORE_NAME --password YOUR_PASSWORD --dir path/to/your/theme
