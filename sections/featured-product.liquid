@@ -1,9 +1,10 @@
 <section class="featured-product" style="background-color: {{ section.settings.background_color }}">
   {% if section.settings.title %}
-  <h2 class="product-section-title">{{ section.settings.title }}</h2>
+  <h2 class="product-section-title" style="color: {{ section.settings.title_font_color }}">{{ section.settings.title }}</h2>
   {% endif %}
+
   {% if section.settings.subtitle %}
-  <p class="product-section-subtitle">{{ section.settings.subtitle }}</p>
+  <p class="product-section-subtitle" style="color: {{ section.settings.subtitle_font_color }}">{{ section.settings.subtitle }}</p>
   {% endif %}
 
   <div class="product-grid">
@@ -14,10 +15,8 @@
         <div class="product-image-container {{ section.settings.image_shape }}">
           <img src="{{ section.settings.product1.featured_image | img_url: '600x600' }}" alt="{{ section.settings.product1.title }}" class="product-image" />
         </div>
-
         <!-- Product Title -->
         <h3 class="product-title">{{ section.settings.product1.title }}</h3>
-
         <!-- Product Price -->
         {% if section.settings.product1.compare_at_price > section.settings.product1.price %}
         <p class="product-price">
@@ -40,10 +39,8 @@
         <div class="product-image-container {{ section.settings.image_shape }}">
           <img src="{{ section.settings.product2.featured_image | img_url: '600x600' }}" alt="{{ section.settings.product2.title }}" class="product-image" />
         </div>
-
         <!-- Product Title -->
         <h3 class="product-title">{{ section.settings.product2.title }}</h3>
-
         <!-- Product Price -->
         {% if section.settings.product2.compare_at_price > section.settings.product2.price %}
         <p class="product-price">
@@ -66,10 +63,8 @@
         <div class="product-image-container {{ section.settings.image_shape }}">
           <img src="{{ section.settings.product3.featured_image | img_url: '600x600' }}" alt="{{ section.settings.product3.title }}" class="product-image" />
         </div>
-
         <!-- Product Title -->
         <h3 class="product-title">{{ section.settings.product3.title }}</h3>
-
         <!-- Product Price -->
         {% if section.settings.product3.compare_at_price > section.settings.product3.price %}
         <p class="product-price">
@@ -87,6 +82,7 @@
   </div>
 </section>
 
+
 {% schema %}
 {
 "name": "Featured Product",
@@ -98,6 +94,12 @@
 "default": "Featured Product"
 },
 {
+"type": "color",
+"id": "title_font_color",
+"label": "Title Font Color",
+"default": "#000000"
+},
+{
 "type": "text",
 "id": "subtitle",
 "label": "Subtitle",
@@ -105,9 +107,15 @@
 },
 {
 "type": "color",
+"id": "subtitle_font_color",
+"label": "Subtitle Font Color",
+"default": "#000000"
+},
+{
+"type": "color",
 "id": "background_color",
 "label": "Background Color",
-"default": "#ffffff"
+"default": "#FFA07A"
 },
 {
 "type": "product",
