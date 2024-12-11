@@ -10,13 +10,6 @@
             "heading_size": "h0"
           }
         },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
-          }
-        },
         "button": {
           "type": "buttons",
           "settings": {
@@ -31,7 +24,6 @@
       },
       "block_order": [
         "heading",
-        "text",
         "button"
       ],
       "settings": {
@@ -44,34 +36,6 @@
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": false,
         "show_text_below": false
-      }
-    },
-    "rich_text": {
-      "type": "rich-text",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text"
-      ],
-      "settings": {
-        "color_scheme": "scheme-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
       }
     },
     "featured_collection": {
@@ -91,7 +55,9 @@
         "show_rating": false,
         "columns_mobile": "2",
         "padding_top": 28,
-        "padding_bottom": 36
+        "padding_bottom": 36,
+        "padding_left": 20,
+        "padding_right": 20
       }
     },
     "collage": {
@@ -156,30 +122,10 @@
             "link_label": "",
             "link": ""
           }
-        },
-        "column2": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column3": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
         }
       },
       "block_order": [
-        "column1",
-        "column2",
-        "column3"
+        "column1"
       ],
       "settings": {
         "title": "",
@@ -201,7 +147,6 @@
   },
   "order": [
     "image_banner",
-    "rich_text",
     "featured_collection",
     "collage",
     "video",
