@@ -4,7 +4,6 @@
     height: 500px; /* Fixed height */
     position: relative;
     text-decoration: none;
-    padding: 0.25rem; /* Padding adjusted */
     background-color: #ff6a00; /* Light background color */
     border-radius: 8px; /* Optional rounded corners */
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
@@ -38,18 +37,6 @@
     object-position: center;
     padding: 10px 10px 0px 10px;
     border-radius: 8px; /* Adjust the radius as desired */
-}
-
-
-.card__content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Distribute content evenly */
-    padding: 0.5rem;
-    width: 40%; /* Ensure full width */
-    height: 30%; /* Remaining height for content */
-    background-color: #fff; /* Consistent white background */
-    box-sizing: border-box;
 }
 
 .card__heading {
@@ -133,10 +120,10 @@
     color: inherit;
     width: 100%; /* Adjusts dynamically based on grid columns */
     max-width: 300px; /* Limits max width */
-    height: 250px; /* Fixed height */
+    height: 400px; /* Fixed height */
     position: relative;
     text-decoration: none;
-    padding: 0.25rem;
+    padding: 0.1rem;
     background-color: #ff6a00;
     border-radius: 8px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
@@ -172,18 +159,12 @@
     border-radius: 8px; /* Adjust the radius as desired */
 }
 
-.card__content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 0.5rem;
-    width: 100%;
-    background-color: #fff;
-    box-sizing: border-box;
-    text-align: center;
+li {
+    list-style-type: none; /* Removes the bullet points */
 }
+
 .grid__item::before {
-    content: '\2022'; /* Unicode character for a bullet point */
+    content: ""; /* Unicode character for a bullet point */
     margin-right: 10px; /* Adjust margin if necessary */
     font-size: 16px; /* Optional: adjust size if needed */
 }
