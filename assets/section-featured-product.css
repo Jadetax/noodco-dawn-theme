@@ -15,6 +15,8 @@
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease, transform 0.3s ease;
+    display: block; /* Use block instead of flex for better vertical height control */
+    height: auto; /* Allow height to adjust based on content */
 }
 
 /* Responsive Grid for Featured Products */
@@ -25,6 +27,8 @@
     width: 100%;
     margin: 0;
     padding: 10px 20px;
+    flex-grow: 1; /* Ensure grid grows to fill the container */
+    min-height: 0; /* Ensures height respects the content */
 }
 
 /* Product Media Items */
@@ -99,6 +103,7 @@
     .featured-product .product__media-list {
         grid-template-columns: 1fr; /* Stack items in a single column for small screens */
         gap: 10px;
+        height: auto; /* Ensure height adjusts properly */
     }
 
     .title.inline-richtext h2.scroll-trigger.animate--slide-in {
