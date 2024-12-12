@@ -1,6 +1,7 @@
 .collection-hero__inner {
   display: flex;
   flex-direction: column;
+  padding-left: 2rem;
 }
 
 .collection-hero--with-image .collection-hero__inner {
