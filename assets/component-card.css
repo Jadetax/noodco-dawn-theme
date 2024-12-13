@@ -1,130 +1,12 @@
 .card-wrapper {
     color: inherit;
-    width: 300px; /* Fixed width */
-    height: 500px; /* Fixed height */
-    position: relative;
-    text-decoration: none;
-    background-color: #ff6a00; /* Light background color */
-    border-radius: 8px; /* Optional rounded corners */
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center align content horizontally */
-    justify-content: space-between; /* Spread content vertically */
-    overflow: hidden; /* Ensure content stays inside */
-}
-
-.card {
-    text-decoration: none;
-    text-align: center; /* Center align text */
-    background-color: #ffffff; /* White background for the card */
-    border-radius: 8px; /* Matches the wrapper */
-    overflow: hidden; /* Ensures content stays within the card */
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    width: 100%; /* Fit the card inside the wrapper */
-    height: 100%; /* Fit the card inside the wrapper */
-}
-
-    .card:hover {
-        transform: translateY(-5px); /* Slight lift on hover */
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
-    }
-
-.card__media img {
-    width: 290px;
-    height: 150px; /* Adjust image height to fit proportionally */
-    object-fit: cover;
-    object-position: center;
-    padding: 10px 10px 0px 10px;
-    border-radius: 8px; /* Adjust the radius as desired */
-}
-
-.card__heading {
-    font-size: 12px; /* Adjust size for product title */
-    font-weight: bold; /* Emphasis on title */
-    justify-content: center;
-    text-decoration: none;
-}
-
-.price__container .price-item {
-    font-size: 0.9rem; /* Adjust size for regular price */
-    font-weight: 600; /* Slight emphasis */
-    margin: 0;
-}
-
-.price__container .price-item--sale {
-    font-size: 0.9rem; /* Match regular price size */
-    font-weight: bold; /* Highlight sale price */
-}
-
-.price__container .price-item--unit {
-    font-size: 0.8rem; /* Slightly smaller for unit price */
-    font-weight: normal;
-}
-
-.card__badge {
-    font-size: 0.8rem; /* Adjust badge size */
-    font-weight: bold;
-    padding: 0.2rem 0.4rem;
-    border-radius: 4px;
-}
-
-.cards-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Default: 4 columns */
-    gap: 0.25rem; /* Spacing between cards */
-    margin: 0 auto;
-    padding: 0.25rem;
-    justify-content: center;
-    align-items: center;
-}
-
-@media screen and (max-width: 768px) {
-    .cards-container {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
-    }
-}
-
-@media screen and (min-width: 769px) and (max-width: 989px) {
-    .cards-container {
-        grid-template-columns: repeat(3, 1fr); /* 3 columns for tablet-sized screens */
-    }
-}
-
-@media screen and (min-width: 990px) {
-    .cards-container {
-        grid-template-columns: repeat(4, 1fr); /* 4 columns for larger screens */
-    }
-}
-
-
-@media screen and (max-width: 768px) {
-    .cards-container {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for mobile screens */
-    }
-}
-
-@media screen and (min-width: 769px) and (max-width: 989px) {
-    .cards-container {
-        grid-template-columns: repeat(3, 1fr); /* 3 columns for tablets */
-    }
-}
-
-@media screen and (min-width: 990px) {
-    .cards-container {
-        grid-template-columns: repeat(4, 1fr); /* 4 columns for larger screens */
-    }
-}
-
-.card-wrapper {
-    color: inherit;
     width: 100%; /* Adjusts dynamically based on grid columns */
     max-width: 300px; /* Limits max width */
     height: 400px; /* Fixed height */
     position: relative;
     text-decoration: none;
     padding: 0.1rem;
-    background-color: #ff6a00;
+    background-color: #ff6a00; /* Light background */
     border-radius: 8px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -134,7 +16,16 @@
     overflow: hidden;
 }
 
+
+.cards-container::marker {
+    content: ''; /* Removes the marker content */
+    display: none; /* Hides the marker entirely */
+}
+
+
+
 .card {
+    list-style: none;
     text-decoration: none;
     text-align: center;
     background-color: #ffffff;
@@ -152,19 +43,68 @@
 
 .card__media img {
     width: 100%;
-    height: 150px;
+    height: 150px; /* Adjust height proportionally */
     object-fit: cover;
     object-position: center;
     padding: 5px;
-    border-radius: 8px; /* Adjust the radius as desired */
+    border-radius: 8px;
 }
 
-li {
-    list-style-type: none; /* Removes the bullet points */
+.card__heading {
+    font-size: 12px; /* Product title size */
+    font-weight: bold;
+    text-align: center;
+    margin: 0.5rem 0; /* Add spacing if needed */
 }
 
-.grid__item::before {
-    content: ""; /* Unicode character for a bullet point */
-    margin-right: 10px; /* Adjust margin if necessary */
-    font-size: 16px; /* Optional: adjust size if needed */
+/* Price Styles */
+.price__container .price-item {
+    font-size: 0.9rem; /* Regular price size */
+    font-weight: 600;
+    margin: 0;
+}
+
+.price__container .price-item--sale {
+    font-weight: bold; /* Highlight sale price */
+}
+
+.price__container .price-item--unit {
+    font-size: 0.8rem; /* Slightly smaller for unit price */
+    font-weight: normal;
+}
+
+/* Badge Styles */
+.card__badge {
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+}
+
+/* Grid Container */
+.cards-container {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Dynamic columns */
+    gap: 0.25rem;
+    margin: 0 auto;
+    padding: 0.25rem;
+}
+
+@media screen and (max-width: 768px) {
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr); /* Mobile screens */
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 989px) {
+    .cards-container {
+        grid-template-columns: repeat(3, 1fr); /* Tablets */
+    }
+}
+
+@media screen and (min-width: 990px) {
+    .cards-container {
+        grid-template-columns: repeat(4, 1fr); /* Larger screens */
+    }
 }
