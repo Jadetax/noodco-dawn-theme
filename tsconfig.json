@@ -10,7 +10,8 @@
     "outDir": "dist/",
     "rootDir": "assets",
     "sourceMap": true,
-    "moduleResolution": "Node"
+    "moduleResolution": "Node",
+    "jsx": "react"
   },
   "include": [
     "assets/**/*.ts",
