@@ -25,7 +25,7 @@
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     width: 100%;
-    margin: 0;
+    margin: 0 auto; /* Center the grid */
     padding: 10px 20px;
     flex-grow: 1; /* Ensure grid grows to fill the container */
     min-height: 0; /* Ensures height respects the content */
@@ -83,30 +83,39 @@
 /* Media Queries for Responsiveness */
 @media screen and (max-width: 768px) {
     .background-secondary .featured-product {
-        padding: 3rem;
+        padding: 2.5rem 1.5rem; /* Adjust padding for smaller screens */
     }
 
     .featured-product .product__media-list {
-        gap: 15px;
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+        gap: 15px; /* Reduce spacing */
     }
 
     .title.inline-richtext h2.scroll-trigger.animate--slide-in {
         font-size: 1.5rem;
+        padding-left: 15px; /* Adjust padding for smaller screens */
     }
 }
 
 @media screen and (max-width: 576px) {
     .background-secondary .featured-product {
-        padding: 2rem;
+        padding: 2rem 1rem; /* Further adjust padding for mobile */
     }
 
     .featured-product .product__media-list {
-        grid-template-columns: 1fr; /* Stack items in a single column for small screens */
+        grid-template-columns: 1fr; /* Stack items for small screens */
         gap: 10px;
         height: auto; /* Ensure height adjusts properly */
     }
 
     .title.inline-richtext h2.scroll-trigger.animate--slide-in {
         font-size: 1.2rem;
+        padding-left: 10px;
+    }
+
+    .featured-product .share-button,
+    .featured-product .product__view-details {
+        padding: 8px 10px; /* Smaller buttons for mobile */
+        font-size: 0.9rem;
     }
 }
