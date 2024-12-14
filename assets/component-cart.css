@@ -1,13 +1,202 @@
+
 .cart {
   position: relative;
   display: block;
 }
 
+.gradient.color-scheme-1.isolate.section-template--16533262729315__cart-items-padding {
+    padding-left: 50px; /* Adjust the values as needed */
+    padding-right: 50px;
+   
+}
+
+.title.title--primary {
+    text-transform: uppercase;
+    font-size: 36px;
+    font-weight: bold;
+    color: #32281f;
+    padding-bottom: 20px;
+}
+
+.underlined-link {
+    color: #fccead;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out; /* Add transition for smooth animation */
+}
+
+    .underlined-link:hover { /* This line had a missing closing brace */
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 20.5px;
+        color: #917b6c; /* Change the hover color as desired */
+        transform: scale(1.25);
+        transition: all 0.3s ease-in-out; /* Add transition for smooth animation */
+    }
+
+.cart-item {
+    border: 0px solid #150c05; /* Add a border */
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    padding-top: 15px;
+    padding-bottom: 15px;
+   
+    /* Add other styles as needed */
+}
+
+/* Responsive button */
+.quantity.cart-quantity {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Vertically align items */
+    justify-content: space-between; /* Distribute items evenly */
+    gap: 10px; /* Add spacing between elements */
+    width: 100%; /* Ensure full width for parent */
+    max-width: 300px; /* Optional: Limit maximum width */
+    margin: 0 auto; /* Center parent horizontally */
+}
+
+.icon.icon-minus {
+    border: none;
+    padding: 0 5px;
+    transition: color 0.3s ease-in-out;
+    width: 30px; /* Set a consistent width */
+    height: 30px; /* Set a consistent height */
+    display: flex; /* Center content inside */
+    align-items: center;
+    justify-content: center;
+    background: none;
+    cursor: pointer; /* Add a pointer for buttons */
+}
+
+    .icon.icon-minus:hover {
+        color: #ac8061;
+    }
+
+.quantity__input {
+    border: solid 2px #808080;
+    padding-left: 5px;
+    padding-right: 5px;
+    transition: color 0.3s ease-in-out;
+    width: 100px; /* Set a fixed width */
+    height: 35px; /* Set height for consistent alignment */
+    text-align: center; /* Center text inside the input */
+    box-sizing: border-box; /* Include padding and border in width/height */
+}
+
+.icon.icon-plus {
+    border: none;
+    padding: 0 5px;
+    transition: color 0.3s ease-in-out;
+    width: 30px; /* Set a consistent width */
+    height: 30px; /* Set a consistent height */
+    display: flex; /* Center content inside */
+    align-items: center;
+    justify-content: center;
+    background: none;
+    cursor: pointer; /* Add a pointer for buttons */
+}
+
+    .icon.icon-plus:hover {
+        color: #ac8061;
+    }
+
+
+
+
+
+@media (max-width: 767px) { /* Responsive adjustments */
+    .quantity.cart-quantity {
+        flex-direction: row; /* Ensure items stay in a row */
+        width: 100%; /* Allow full width for smaller screens */
+        gap: 5px; /* Reduce gap for smaller screens */
+    }
+
+    .icon.icon-minus,
+    .quantity__input,
+    .icon.icon-plus {
+        width: 25%; /* Adjust width proportionally */
+        height: 30px; /* Adjust height for smaller screens */
+    }
+}
+
+
+
+
+
+.button.button--tertiary.delete-button {
+    border: none;
+    color: #070f99;
+    font-size: 15px;
+    transition: color 0.3s ease-in-out;
+    width: 30px; /* Set a consistent width */
+    height: 30px; /* Set a consistent height */
+    display: flex; /* Center content inside */
+    align-items: center;
+    justify-content: center;
+    background: none;
+    cursor: pointer; /* Add a pointer for buttons */
+    padding-left: 50px;
+    text-transform: uppercase;
+}
+
+    .button.button--tertiary.delete-button:hover {
+        color: #070d67;
+    }
+
+@media (max-width: 767px) { /* Responsive adjustments */
+    .button.button--tertiary.delete-button {
+        flex-direction: row; /* Ensure items stay in a row */
+        width: 100%; /* Allow full width for smaller screens */
+        gap: 10px; /* Reduce gap for smaller screens */
+    }
+
+    .button.button--tertiary.delete-button {
+        width: 25%; /* Adjust width proportionally */
+        height: 30px; /* Adjust height for smaller screens */
+    }
+}
+
+
+
+.cart__checkout-button.button{
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+
+
+
+.visually-hidden {
+    display: none;
+}
+.svg-wrapper {
+    border: none; /* This removes the border */
+    border-radius: 10px;
+}
+
+.shopify-section.cart__footer-wrapper{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+
+
+.cart-item__totals.right.small-hide {
+    display: none !important;
+}
+
+.small-hide.right.caption-with-letter-spacing {
+    display: none !important;
+}
+
+
+
 .cart__empty-text,
 .is-empty .cart__contents,
 cart-items.is-empty .title-wrapper-with-link,
 .is-empty .cart__footer {
-  display: none;
+    display: none;
 }
 
 .is-empty .cart__empty-text,
@@ -52,7 +241,8 @@ cart-items.is-empty .title-wrapper-with-link,
 }
 
 cart-items {
-  display: block;
+    display: block;
+   
 }
 
 .cart__items {
@@ -152,7 +342,21 @@ cart-items {
 }
 
 .cart__ctas button {
-  width: 100%;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #0009a4;
+    border: none; /* Remove default border */
+    transition: all 0.3s ease-in-out; /* Add transition for smooth animation */
+}
+
+    .cart__ctas button:hover {
+        background-color: #555; /* Change background color on hover */
+        transform: translateY(-2px); /* Slight lift on hover */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+        background-color: #808080;
+    }
+        
 }
 
 .cart__ctas > * + * {
@@ -166,6 +370,7 @@ cart-items {
 .cart__dynamic-checkout-buttons {
   max-width: 36rem;
   margin: 0 auto;
+  height: 30px;
 }
 
 .cart__dynamic-checkout-buttons:has(.dynamic-checkout__content:empty) {
