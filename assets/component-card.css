@@ -1,8 +1,8 @@
 .card-wrapper {
     color: inherit;
-    width: 100%; /* Adjusts dynamically based on grid columns */
-    max-width: 300px; /* Limits max width */
-    height: 400px; /* Fixed height */
+    width: 100%; /* Full width of the container */
+    max-width: 600px; /* Limit max width for a consistent card size */
+    height: 400px; /* Fixed height for card display */
     position: relative;
     text-decoration: none;
     padding: 0.1rem;
@@ -16,14 +16,36 @@
     overflow: hidden;
 }
 
-
 .cards-container::marker {
     content: ''; /* Removes the marker content */
     display: none; /* Hides the marker entirely */
 }
 
+/* Reset the ul list style */
+ul.grid.product-grid.grid--2-col-tablet-down {
+    list-style: none; /* Removes default bullets */
+    margin: 0 auto; /* Center the grid container horizontally */
+    padding: 0; /* Reset padding */
+    display: grid; /* Enable grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Dynamic columns with min size of 300px */
+    gap: 1rem; /* Space between grid items */
+    justify-content: center; /* Center items horizontally within the grid */
+}
 
+    /* Reset the li list style */
+    ul.grid.product-grid.grid--2-col-tablet-down > li {
+        list-style: none; /* Ensures no bullets for child items */
+        margin: 0; /* Reset margin */
+        padding: 0; /* Reset padding */
+    }
 
+        /* Remove ::marker as a backup */
+        ul.grid.product-grid.grid--2-col-tablet-down > li::marker {
+            content: ''; /* Remove marker content */
+            display: none; /* Hide marker */
+        }
+
+/* Card Layout */
 .card {
     list-style: none;
     text-decoration: none;
@@ -33,7 +55,7 @@
     overflow: hidden;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     width: 100%;
-    height: 100%;
+    height: 100%; /* Ensure the card takes full height */
 }
 
     .card:hover {
@@ -86,7 +108,7 @@
     list-style: none;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Dynamic columns */
-    gap: 0.25rem;
+    gap: 1rem; /* Space between grid items */
     margin: 0 auto;
     padding: 0.25rem;
 }
@@ -106,5 +128,11 @@
 @media screen and (min-width: 990px) {
     .cards-container {
         grid-template-columns: repeat(4, 1fr); /* Larger screens */
+    }
+
+    /* Ensure card width takes up more space on larger screens */
+    .card-wrapper {
+        max-width: 600px; /* Limit card width on larger screens */
+        height: 450px; /* Increase height for better content display */
     }
 }

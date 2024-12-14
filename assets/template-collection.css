@@ -1,105 +1,241 @@
-
 /* Add global padding to all `.collection` components */
 .collection {
     padding-left: 2rem;
     padding-right: 2rem;
 }
+
 @media screen and (max-width: 749px) {
-  .collection .grid__item:only-child {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
+    .collection .grid__item:only-child {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
 }
 
 @media screen and (max-width: 989px) {
-  .collection .slider.slider--tablet {
-    margin-bottom: 1.5rem;
-  }
+    .collection .slider.slider--tablet {
+        margin-bottom: 1.5rem;
+    }
 }
 
 .collection .loading-overlay {
-  position: absolute;
-  z-index: 1;
-  width: 1.8rem;
+    position: absolute;
+    z-index: 1;
+    width: 1.8rem;
 }
 
 @media screen and (max-width: 749px) {
-  .collection .loading-overlay {
-    top: 0;
-    right: 0;
-  }
+    .collection .loading-overlay {
+        top: 0;
+        right: 0;
+    }
 }
 
 @media screen and (min-width: 750px) {
-  .collection .loading-overlay {
-    left: 0;
-  }
+    .collection .loading-overlay {
+        left: 0;
+    }
 }
 
 .collection .loading-overlay {
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: none;
-  width: 100%;
-  padding: 0 1.5rem;
-  opacity: 0.7;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    padding: 0 1.5rem;
+    opacity: 0.7;
 }
 
 @media screen and (min-width: 750px) {
-  .collection .loading-overlay {
-    padding-left: 5rem;
-    padding-right: 5rem;
-  }
+    .collection .loading-overlay {
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
 }
 
 .collection.loading .loading-overlay {
-  display: block;
+    display: block;
 }
 
 .collection--empty .title-wrapper {
-  margin-top: 10rem;
-  margin-bottom: 15rem;
+    margin-top: 10rem;
+    margin-bottom: 15rem;
 }
 
 @media screen and (max-width: 989px) {
-  .collection .slider--tablet.product-grid {
-    scroll-padding-left: 1.5rem;
-  }
+    .collection .slider--tablet.product-grid {
+        scroll-padding-left: 1.5rem;
+    }
 }
 
 .collection__description > * {
-  margin: 0;
+    margin: 0;
 }
 
 .collection__title.title-wrapper {
-  margin-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
 }
 
 .collection__title .title:not(:only-child) {
-  margin-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 @media screen and (min-width: 990px) {
-  .collection__title--desktop-slider .title {
-    margin-bottom: 2.5rem;
-  }
+    .collection__title--desktop-slider .title {
+        margin-bottom: 2.5rem;
+    }
 
-  .collection__title.title-wrapper--self-padded-tablet-down {
-    padding: 0 5rem;
-  }
+    .collection__title.title-wrapper--self-padded-tablet-down {
+        padding: 0 5rem;
+    }
 
-  .collection slider-component:not(.page-width-desktop) {
-    padding: 0;
-  }
+    .collection slider-component:not(.page-width-desktop) {
+        padding: 0;
+    }
 
-  .collection--full-width slider-component:not(.slider-component-desktop) {
-    padding: 0 1.5rem;
-    max-width: none;
-  }
+    .collection--full-width slider-component:not(.slider-component-desktop) {
+        padding: 0 1.5rem;
+        max-width: none;
+    }
 }
 
-.collection__view-all a:not(.link) {
-  margin-top: 1rem;
+/* Card styles */
+.card-wrapper {
+    color: inherit;
+    width: 100%; /* Full width of the container */
+    max-width: 600px; /* Limit max width */
+    height: 450px; /* Increased height for larger display */
+    position: relative;
+    text-decoration: none;
+    padding: 0.1rem;
+    background-color: #ff6a00; /* Light background */
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.cards-container::marker {
+    content: ''; /* Removes the marker content */
+    display: none; /* Hides the marker entirely */
+}
+
+/* Reset the ul list style */
+ul.grid.product-grid.grid--2-col-tablet-down {
+    list-style: none; /* Removes default bullets */
+    margin: 0 auto; /* Center the grid container horizontally */
+    padding: 0; /* Reset padding */
+    display: grid; /* Enable grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Dynamic columns with a min size of 300px */
+    gap: 1rem; /* Space between grid items */
+    justify-content: center; /* Center items horizontally within the grid */
+}
+
+    /* Reset the li list style */
+    ul.grid.product-grid.grid--2-col-tablet-down > li {
+        list-style: none; /* Ensures no bullets for child items */
+        margin: 0; /* Reset margin */
+        padding: 0; /* Reset padding */
+    }
+
+        /* Remove ::marker as a backup */
+        ul.grid.product-grid.grid--2-col-tablet-down > li::marker {
+            content: ''; /* Remove marker content */
+            display: none; /* Hide marker */
+        }
+
+/* Card styles */
+.card {
+    list-style: none;
+    text-decoration: none;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+}
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+.card__media img {
+    width: 100%;
+    height: 150px; /* Adjust height proportionally */
+    object-fit: cover;
+    object-position: center;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.card__heading {
+    font-size: 12px; /* Product title size */
+    font-weight: bold;
+    text-align: center;
+    margin: 0.5rem 0; /* Add spacing if needed */
+}
+
+/* Price Styles */
+.price__container .price-item {
+    font-size: 0.9rem; /* Regular price size */
+    font-weight: 600;
+    margin: 0;
+}
+
+.price__container .price-item--sale {
+    font-weight: bold; /* Highlight sale price */
+}
+
+.price__container .price-item--unit {
+    font-size: 0.8rem; /* Slightly smaller for unit price */
+    font-weight: normal;
+}
+
+/* Badge Styles */
+.card__badge {
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+}
+
+/* Grid Container */
+.cards-container {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Dynamic columns */
+    gap: 1rem; /* Space between grid items */
+    margin: 0 auto;
+    padding: 0.25rem;
+}
+
+@media screen and (max-width: 768px) {
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr); /* Mobile screens */
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 989px) {
+    .cards-container {
+        grid-template-columns: repeat(3, 1fr); /* Tablets */
+    }
+}
+
+@media screen and (min-width: 990px) {
+    .cards-container {
+        grid-template-columns: repeat(4, 1fr); /* Larger screens */
+    }
+
+    /* Ensuring consistent card width for larger screens */
+    .card-wrapper {
+        max-width: 600px; /* Limit max width */
+        height: 450px; /* Consistent card height */
+    }
 }
