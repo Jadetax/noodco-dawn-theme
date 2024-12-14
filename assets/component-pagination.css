@@ -9,19 +9,19 @@
 }
 
 .pagination__list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none; /* Removes the default dot */
+    padding: 0; /* Clears default padding */
+    margin: 0; /* Clears default margin */
 }
 
-.pagination__list > li {
-  flex: 1 0 4.4rem;
-  max-width: 4.4rem;
-}
+    .pagination__list > li {
+        flex: 1 0 4.4rem;
+        max-width: 4.4rem;
+    }
 
-.pagination__list > li:not(:last-child) {
-  margin-right: 1rem;
-}
 
 .pagination__item {
   color: rgb(var(--color-foreground));
