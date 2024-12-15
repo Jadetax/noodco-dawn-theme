@@ -514,6 +514,7 @@
             </div>
           {% endif %}
         {% endif %}
+
         <div class="card__badge {{ settings.badge_position }}">
           {%- if card_product.available == false -%}
             <span
@@ -531,6 +532,21 @@
             </span>
           {%- endif -%}
         </div>
+
+
+
+       {%- comment -%}   Insert Button Add to Cart {%- endcomment -%}
+        <!-- Add to Cart Button -->
+      <button class="add-to-cart-btn" data-product-id="{{ card_product.selected_or_first_available_variant.id }}">
+  Add to Cart
+</button>
+
+
+        
+
+
+
+
       </div>
     </div>
   </div>
@@ -591,3 +607,5 @@
     </div>
   </div>
 {%- endif -%}
+
+
